@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Oklahoma City Thunder @ Indiana Pacers</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,900" rel="stylesheet" />
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <style>
         body {
             font-family: 'Nunito Sans', sans-serif;
@@ -80,5 +83,29 @@
         </footer>
     </div>
 </body>
+
+    <!-- Add Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+<script>
+    // JavaScript written here
+    var map = L.map('map', {
+        center: [-86.155556, 39.763889],
+        zoom: 13
+    });
+
+    var basemap_url = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/light_all/{z}/{x}/{y}.png'
+
+    var basemap_attributes = {
+        attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="http://cartodb.com/attributions">CartoDB</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }
+
+    var tiles = L.tileLayer(basemap_url, basemap_attributes).addTo(map);
+
+    var message = 'Welcome to Sydney!';
+</script>
 
 </html>
